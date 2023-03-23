@@ -1,0 +1,16 @@
+class Solution {
+public:
+    
+ int  isWord(char w)
+    {
+        return(w=='a'||w=='e'||w=='i'||w=='o'||w=='u');
+    }
+    int vowelStrings(vector<string>& words, int left, int right) {
+       int count=0;
+        for(int i=left;i<=right;i++)
+        {
+            if(isWord(words[i][0]) && isWord(words[i].back()))count++;
+        }
+        return count;
+    }
+};

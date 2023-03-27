@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string reformat(string s) {
+        vector<char> digits, letters;
+    for (char c : s) {
+        if (isdigit(c)) digits.push_back(c);
+        else letters.push_back(c);
+    }
+    if (abs((int)digits.size() - (int)letters.size()) > 1) return "";
+    string res;
+    int i = 0, j = 0;
+    if (digits.size() >= letters.size()) {
+        while (i < digits.size() || j < letters.size()) {
+            if (i < digits.size()) res += digits[i++];
+            if (j < letters.size()) res += letters[j++];
+        }
+    } else {
+        while (i < letters.size() || j < digits.size()) {
+            if (i < letters.size()) res += letters[i++];
+            if (j < digits.size()) res += digits[j++];
+        }
+    }
+    return res;
+        
+    }
+};

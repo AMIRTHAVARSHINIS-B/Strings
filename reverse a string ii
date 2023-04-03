@@ -1,0 +1,16 @@
+LC:541
+class Solution {
+public:
+    string reverseStr(string s, int k) {
+       
+        int len=s.length();
+      
+      
+          for(int j=0;j<len;j+=2*k)
+          {
+             reverse(s.begin()+j,s.begin()+j+min(k,len-j));
+          }
+        
+      return s;
+    }
+};

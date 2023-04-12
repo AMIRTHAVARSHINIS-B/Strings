@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+    int string_count=haystack.find(needle);
+    if(string_count!=string::npos)
+    {
+        return string_count;
+    }
+    else
+     return -1;
+
+    }
+};
